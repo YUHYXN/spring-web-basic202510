@@ -18,6 +18,7 @@ public class Book {
     private LocalDate publishedDate;
     private BookStatus status;
 
+    /*
     public Book(Builder builder) {
         this.id = builder.id;
         this.title = builder.title;
@@ -40,8 +41,6 @@ public class Book {
         private BookStatus status;
 
         public Builder() {}
-
-
 
         // 필드를 초기화하는 setter를 자기 필드명과 동일하게 생성
         public Builder id(Long id) {
@@ -83,6 +82,8 @@ public class Book {
     public static Book.Builder builder() {
         return new Book.Builder();
     }
+
+    */
 
 
     // 나중에 DB를 사용하면 status 값도 DB에 저장될 것이기 때문에

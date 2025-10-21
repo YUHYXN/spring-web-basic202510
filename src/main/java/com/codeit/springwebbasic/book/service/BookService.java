@@ -15,7 +15,7 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
-    public void createBook(BookCreateRequestDto requestDto) {
+    public Book createBook(BookCreateRequestDto requestDto) {
         // ISBN 중복 체크
         Optional<Book> byIsbn = bookRepository.findByIsbn(requestDto.getIsbn());
         if (byIsbn.isPresent()) {
@@ -33,10 +33,7 @@ public class BookService {
                 .publishedDate(requestDto.getPublishedDate())
                 .build();
 
-
-        bookRepository.save(book);
-
-
+        return bookRepository.save(book);
     }
 
 
