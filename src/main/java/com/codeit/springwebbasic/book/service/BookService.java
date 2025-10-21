@@ -36,5 +36,10 @@ public class BookService {
         return bookRepository.save(book);
     }
 
+    public Book getBook(Long id) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("도서를 찾을 수 없습니다."));
 
+        return book;
+    }
 }
